@@ -1,10 +1,5 @@
-import M_Component from './Component/index';
-import cE from './packages/createElement';
+import * as MW from './lifeHooks/index';
+import SetCookie from './set-cookies';
 
-export const createElement = cE;
-export const Component = M_Component;
-const Melody = {
-    Component,
-    createElement
-}
-export default Melody;
+
+export default MW ;

@@ -13,10 +13,7 @@
     ],
     "@babel/preset-typescript",
     [
-      "@babel/preset-react",
-      {
-        "pragma": "Melody.createElement"
-      }
+      "@babel/preset-react"
     ]
   ],
   "plugins": [

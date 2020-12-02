@@ -1,7 +1,7 @@
 {
-  "name": "melody",
+  "name": "melody-cors-utils",
   "version": "1.0.0",
-  "description": "melody.js, which a lightweight and efficient framework.",
+  "description": "This is a tool library that provides a standard API to any project with react-hooks",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -56,6 +56,10 @@
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
-    "request-idle-callback": "^1.0.2"
+    "melody-cors-utils": "^1.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "request-idle-callback": "^1.0.2",
+    "rollup-plugin-typescript2": "^0.29.0"
   }
 }
