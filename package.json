@@ -57,8 +57,6 @@
   },
   "dependencies": {
     "melody-cors-utils": "^1.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
     "request-idle-callback": "^1.0.2",
     "rollup-plugin-typescript2": "^0.29.0"
   }

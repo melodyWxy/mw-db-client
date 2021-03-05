@@ -1,3 +1,11 @@
+/*
+ * @Author: wufan
+ * @Date: 2021-03-03 16:03:32
+ * @LastEditors: wufan
+ * @LastEditTime: 2021-03-03 16:08:40
+ * @FilePath: /cypress-example-recipes/Users/wxy/codeWorks/demoPros/mwDB/melody-core-utils/config/rollup.config.pro.js
+ * @Description: update here
+ */
 import path from 'path';
 import json from 'rollup-plugin-json';
 import resolve from 'rollup-plugin-node-resolve';
@@ -7,13 +15,13 @@ import ts from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
 
 const getPath = _path => path.resolve(__dirname, _path);
-let outModuleType='ejs';
+let outModuleType='umd';
 const extensions = ['js', 'ts'];
 
 try {
     outModuleType = process.argv[process.argv.length-1].replace('--','');
 } catch (error) {
-    outModuleType = 'ejs';
+    outModuleType = 'umd';
 }
 
 
@@ -49,7 +57,7 @@ function createInputOptions(){
 }
 
 function createOutOoptions(){
-    let format = 'es';
+    let format = 'umd';
     if(outModuleType === 'cjs') {
         format = 'cjs';
     }
