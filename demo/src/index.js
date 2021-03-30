@@ -1,57 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { useInitState, useDidMount, useWillMount, useWillUpdate, useDidUpdate, useWillUnmount } from 'melody-cors-utils';
+/*
+ * @Author: 六弦(melodyWxy)
+ * @Date: 2021-03-06 01:26:10
+ * @LastEditors: 六弦(melodyWxy)
+ * @LastEditTime: 2021-03-09 23:08:15
+ * @FilePath: /cypress-example-recipes/Users/wxy/codeWorks/demoPros/mwDB/melody-core-utils/demo/src/index.js
+ * @Description: update here
+ */
+import MWClientDB from './../../src/index.ts';
 
-function App(props){
-    const [state, setState] = useInitState({
-        a: 1,
-        b: 2,
-        c: 3
-    })
-      
-    useDidMount(()=>{
-        console.log('did-mount');
-        setState({
-            a: 1005
-        })
-    })
+const db = new MWClientDB({
+    dbName: '测试db'
+});
 
-    useWillUnmount(()=>{
-        console.log('un-mount');
-    })
-
-    useWillMount(()=>{
-        console.log('willMount');
-    })
-    useWillUpdate(()=>{
-        console.log('will-update');
-    })
-    useDidUpdate(()=>{
-        console.log('did-update');
-    })
-
-    return (
-        <div>
-            <div >{state.a}</div>
-            <div onClick={()=>setState({
-                b: state.b+1
-            })}>{state.b}   +</div>
-            {state.b%2===0?<Child1 /> : <Child2 /> }
-        </div>
-    )
-}
-
-function Child1 (){
-    useWillUnmount(()=>{
-        console.log('un-mount');
-    })
-    return 'Child1';
-}
-function Child2(){
-    return 'child2';
-}
-
-ReactDOM.render( 
-(<App title='app-title---'>
-   
-</App>), root);
+db.setItem('测试表', {
+    a: 1,
+    b: 2
+})
+console.log('实例：', db);
